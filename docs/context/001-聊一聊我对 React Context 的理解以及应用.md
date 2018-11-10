@@ -24,4 +24,4 @@ React文档官网并未对Context给出“是什么”的定义，更多是描�
 
 In Some Cases, you want to pass data through the component tree without having to pass the props down manuallys at every level. you can do this directly in React with the powerful "context" API.
 
-简单说就是，当你不想在组件树中通过逐层传递props或者state的方式来传递数据时，可以使用Context来实现跨层级的组件数据传递。
+简单说就是，当你不想在组件树中通过逐层传递 `props` 或者 `state` 的方式来传递数据时，可以使用Context来实现跨层级的组件数据传递。
