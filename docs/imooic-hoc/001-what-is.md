@@ -8,3 +8,6 @@ setTimeout(()=>{
     console.log('hello hoc!');
 },1000)
 ```
+
+## array
+- some/every/forEach 都是
