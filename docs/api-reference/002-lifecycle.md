@@ -41,6 +41,8 @@ UNSAFE_componentWillReceiveProps()
 - componentDidCatch()
 
 
-
+## resources
+- https://zh-hans.reactjs.org/docs/react-component.html
+- http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
 

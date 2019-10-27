@@ -41,3 +41,7 @@ this.setState((state) => {
 
 ## forceUpdate
 component.forceUpdate(callback)
+
+## resources
+- https://stackoverflow.com/questions/48563650/does-react-keep-the-order-for-state-updates/48610973#48610973
+- https://zh-hans.reactjs.org/docs/react-component.html#forceupdate
