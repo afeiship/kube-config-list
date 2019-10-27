@@ -41,6 +41,7 @@ this.setState((state) => {
 
 ## forceUpdate
 component.forceUpdate(callback)
+> 通常你应该避免使用 forceUpdate()，尽量在 render() 中使用 this.props 和 this.state。
 
 ## resources
 - https://stackoverflow.com/questions/48563650/does-react-keep-the-order-for-state-updates/48610973#48610973
