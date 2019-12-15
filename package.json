@@ -1,0 +1,17 @@
+{
+  "name": "react-notes",
+  "version": "1.0.0",
+  "description": "React notes.",
+  "homepage": "https://github.com/afeiship",
+  "author": {
+    "name": "afeiship",
+    "email": "1290657123@qq.com"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./server.js"
+  },
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
+}

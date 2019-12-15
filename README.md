@@ -1,4 +1,2 @@
 # react-notes
 > React notes.
-
-
