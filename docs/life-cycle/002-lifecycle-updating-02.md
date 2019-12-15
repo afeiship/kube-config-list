@@ -10,7 +10,7 @@
 - static getDerivedStateFromProps()
 - shouldComponentUpdate()
 - render()
-- static getSnapshotBeforeUpdate()
+- getSnapshotBeforeUpdate()
 - componentDidUpdate()
 
 - 这个是当一个组件更新的时候处理的一些阶段
@@ -82,4 +82,57 @@ ReactDOM.render(<Header />, document.getElementById('root'));
 ```
 
 ### getSnapshotBeforeUpdate
+
+In the getSnapshotBeforeUpdate() method you have access to the props and state before the update, meaning that even after the update, you can check what the values were before the update.
+
+If the getSnapshotBeforeUpdate() method is present, you should also include the componentDidUpdate() method, otherwise you will get an error.
+
+The example below might seem complicated, but all it does is this:
+
+When the component is mounting it is rendered with the favorite color "red".
+
+When the component has been mounted, a timer changes the state, and after one second, the favorite color becomes "yellow".
+
+This action triggers the update phase, and since this component has a getSnapshotBeforeUpdate() method, this method is executed, and writes a message to the empty DIV1 element.
+
+- 取dom的一些状态 `check what the values were before the update`
+
+### componentDidUpdate()
+- The componentDidUpdate method is called after the component is updated in the DOM.
+- The example below might seem complicated, but all it does is this:
+- When the component is mounting it is rendered with the favorite color "red".
+- When the component has been mounted, a timer changes the state, and the color becomes "yellow".
+
+```jsx
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({favoritecolor: "yellow"})
+    }, 1000)
+  }
+
+  componentDidUpdate() {
+    document.getElementById("mydiv").innerHTML =
+    "The updated favorite is " + this.state.favoritecolor;
+  }
+  
+  render() {
+    return (
+      <div>
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+      <div id="mydiv"></div>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Header />, document.getElementById('root'));
+```
+
+
 
