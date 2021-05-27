@@ -1,6 +1,15 @@
 import React, { useEffect, useCallback, useState } from 'react';
 import styled from 'styled-components';
 
+/**
+ * @https://segmentfault.com/a/1190000020108840
+ *
+ * useCallback 使用不当，性能更差
+ * https://codesandbox.io/s/test-usecallback-xqvuc?file=/src/index.js
+ * test cost time:
+ * No-useCallback: 54982
+ * useCallback: 166417
+ */
 const C1 = styled.div`
   width: 80%;
   margin: 20px auto;
