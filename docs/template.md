@@ -16,9 +16,15 @@ npm i && npm link
 ```
 
 ## usage
-~~~
+```shell
 __USAGE__
-~~~
+
+# create boot.sh file
+kube-config-list -b
+
+# add alias 
+alias kcl="kube-config-list && source ~/.kube/boot.sh";
+```
 
 ## license
 Code released under [the MIT license](https://github.com/afeiship/kube-config-list/blob/master/LICENSE.txt).

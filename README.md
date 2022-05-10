@@ -16,15 +16,20 @@ npm i && npm link
 ```
 
 ## usage
-~~~
+```shell
 Usage: kube-config-list [options]
 
 Options:
-  -V, --version       output the version number
-  -d, --debug         only show cmds, but not clean.
-  -s, --src <string>  source filepath. (default: "./src")
-  -h, --help          display help for command
-~~~
+  -V, --version  output the version number
+  -b, --boot     Create "boot.sh" to ~/.kube dir (default: false)
+  -h, --help     display help for command
+
+# create boot.sh file
+kube-config-list -b
+
+# add alias to .bashrc/.zshrc
+alias kcl="kube-config-list && source ~/.kube/boot.sh";
+```
 
 ## license
 Code released under [the MIT license](https://github.com/afeiship/kube-config-list/blob/master/LICENSE.txt).
