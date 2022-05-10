@@ -12,9 +12,9 @@ const globby = require('globby');
 const ipt = require('ipt');
 const path = require('path');
 const fs = require('fs');
-
-const KUBE_HOME = process.env['KUBE_HOME'];
-const KUBE_BOOT = process.env['KUBE_BOOT'];
+const homedir = require('os').homedir();
+const KUBE_HOME = process.env['KUBE_HOME'] || `${homedir}/.kube`;
+const KUBE_BOOT = process.env['KUBE_BOOT'] || `${homedir}/.kube/boot.sh`;
 const opts = { stdin: process.stdin, stdout: process.stdout };
 const gpt = ['*', '!boot.sh'];
 const gopts = { onlyFiles: true, cwd: KUBE_HOME };
