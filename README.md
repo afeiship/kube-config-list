@@ -10,9 +10,7 @@
 
 ## installation
 ```shell
-git clone https://github.com/afeiship/kube-config-list.git
-cd kube-config-list
-npm i && npm link
+npm i -g @jswork/kube-config-list
 ```
 
 ## usage
