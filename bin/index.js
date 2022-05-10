@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 const { Command } = require('commander');
-const chalk = require('chalk');
 
 // next packages:
 require('@jswork/next');
