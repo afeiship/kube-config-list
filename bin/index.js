@@ -20,7 +20,7 @@ const gpt = ['*', '!boot.sh'];
 const gopts = { onlyFiles: true, cwd: KUBE_HOME };
 
 program.version(version);
-program.option('-b, --boot', 'Create boot.sh to ~/.kube dir', false).parse(process.argv);
+program.option('-b, --boot', 'Create "boot.sh" to ~/.kube dir', false).parse(process.argv);
 
 nx.declare({
   statics: {
