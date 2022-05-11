@@ -3,6 +3,13 @@ const fs = require('fs');
 test('change ', () => {
   // todo: how to test this cli program?
   const res = require('../bin');
+  var stdin = process.openStdin();
+  require('tty').setRawMode(true);
+
+  stdin.on('keypress', function (chunk, key) {
+    process.stdout.write('Get Chunk: ' + chunk + '\n');
+    if (key && key.ctrl && key.name == 'c') process.exit();
+  });
   process.stdin.emit('keypress', '', { name: 'enter' });
   // process.stdin.emit('keypress', '', { name: 'enter' });
   // process.stdin.on('readable', function () {
