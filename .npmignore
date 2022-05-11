@@ -14,3 +14,4 @@ Rakefile
 .editorconfig
 .release-it.json
 .prettierrc
+jest.config.js

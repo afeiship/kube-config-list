@@ -7,7 +7,6 @@ require('@jswork/next-absolute-package');
 
 const { version } = nx.absolutePackage();
 const program = new Command();
-const exec = require('child_process').execSync;
 const globby = require('globby');
 const ipt = require('ipt');
 const path = require('path');
@@ -32,13 +31,16 @@ nx.declare({
   methods: {
     start() {
       if (program.boot) return this.boot();
-      const files = globby.sync(gpt, gopts);
-      const parsed = files.map((file) => path.parse(file).name);
-      ipt(parsed, opts).then((file) => {
+      const names = this.names();
+      ipt(names, opts).then((file) => {
         const cmd = `export KUBECONFIG=${KUBE_HOME}/${file}`;
         fs.writeFileSync(KUBE_BOOT, cmd, { flag: 'w' });
         console.log(`🥬 ENV: '${file}' has been set!`);
       });
+    },
+    names() {
+      const files = globby.sync(gpt, gopts);
+      return files.map((file) => path.parse(file).name);
     },
     boot() {
       if (fs.existsSync(KUBE_BOOT)) return console.log(`File: ${KUBE_BOOT} existes, ignore.`);

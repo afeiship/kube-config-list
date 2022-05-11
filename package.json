@@ -11,6 +11,7 @@
     "kube-config-list": "bin/index.js"
   },
   "scripts": {
+    "test": "jest",
     "build": "gulp",
     "release": "release-it"
   },
@@ -32,6 +33,7 @@
     "gulp": "^4.0.2",
     "gulp-load-plugins": "^2.0.5",
     "gulp-replace": "^1.0.0",
+    "jest": "^28.1.0",
     "prettier": "^2.1.2",
     "release-it": "^14.2.1"
   },
