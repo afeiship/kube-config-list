@@ -33,7 +33,7 @@ nx.declare({
       if (program.boot) return this.boot();
       const names = this.names();
       ipt(names, opts).then((file) => {
-        const cmd = `export KUBECONFIG=${KUBE_HOME}/${file}`;
+        const cmd = `export KUBECONFIG=${KUBE_HOME}/${file}.yml`;
         fs.writeFileSync(KUBE_BOOT, cmd, { flag: 'w' });
         console.log(`🥬 ENV: '${file}' has been set!`);
       });
